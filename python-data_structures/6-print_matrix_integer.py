@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    if matrix is not None:
-        for row in matrix:
-            for num in row:
-                print("{:d}".format(num), end=" ")
-    print()
+    if matrix is None:
+        return
+    
+    for row in matrix:
+        for num in row:
+            print("{:d}".format(num), end=" ")
+        print()
