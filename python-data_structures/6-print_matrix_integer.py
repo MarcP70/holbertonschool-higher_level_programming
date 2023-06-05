@@ -1,0 +1,7 @@
+#!/usr/bin/pyhton3
+def print_matrix_integer(matrix=[[]]):
+    if matrix is not None:
+        for row in matrix:
+            for num in row:
+                print("{:d}".format(num), end=" ")
+            print()
