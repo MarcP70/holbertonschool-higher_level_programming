@@ -9,11 +9,10 @@ def roman_to_int(roman_string):
     previous_value = 0
 
     for char in reversed(roman_string):
-        value = roman_values.get(char, 0)
-        if value >= previous_value:
-            result += value
+        if roman_values[char] >= previous_value:
+            result += roman_values[char]
         else:
-            result -= value
-        previous_value = value
+            result -= roman_values[char]
+        previous_value = roman_values[char]
 
     return result
