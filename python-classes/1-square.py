@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """
 This module includes a class Square that defines a square.
 """
@@ -10,7 +9,7 @@ class Square:
     This class represents a square and provides methods for square operations.
     """
 
-    def __init__(self, size) :
+    def __init__(self, size):
         """
         This methode initializes a new instance of the Square class.
         Parameters:

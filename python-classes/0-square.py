@@ -9,7 +9,7 @@ class Square:
     This class represents a square and provides methods for square operations.
     """
 
-    def __init__(self) :
+    def __init__(self):
         """
         This methode initializes a new instance of the Square class.
         Parameters:
