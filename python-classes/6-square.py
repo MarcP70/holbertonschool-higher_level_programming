@@ -16,8 +16,8 @@ class Square:
         - self: The Square instance being initialized.
         - size: The Size.
         """
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """
