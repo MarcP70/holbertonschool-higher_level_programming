@@ -9,4 +9,10 @@ class Square:
     This class represents a square and provides methods for square operations.
     """
 
-    pass    #An empty block
+    def __init__(self) :
+        """
+        This methode initializes a new instance of the Square class.
+        Parameters:
+        - self: The Square instance being initialized.
+        """
+        pass    # An empty block
