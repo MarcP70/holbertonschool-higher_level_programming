@@ -17,9 +17,9 @@ TypeError: text must be a string
 
 >>> text_indentation("Hello. Do you want a test? That is a test.")
 Hello.
-
+<BLANKLINE>
 Do you want a test?
-
+<BLANKLINE>
 That is a test.
 
 >>> text_indentation("")
