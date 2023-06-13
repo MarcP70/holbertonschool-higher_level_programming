@@ -19,7 +19,7 @@ def text_indentation(text):
     while i < len(text):
         if text[i] in ('.', '?', ':'):
             new_text += text[i]
-            if i != len(text) -1:
+            if i != len(text) - 1:
                 new_text += '\n\n'
             i += 1
         else:
