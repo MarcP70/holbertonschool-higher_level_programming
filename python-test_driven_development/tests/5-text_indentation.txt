@@ -8,18 +8,20 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentation('h')
-h
-
->>> text_indentation(3)
+>>> text_indentation(3555)
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentation("Hello. Do you want a test? That is a test.")
+>>> text_indentation("Hello. Do you want a test? That is a test")
 Hello.
 <BLANKLINE>
 Do you want a test?
 <BLANKLINE>
-That is a test.
+That is a test
 
 >>> text_indentation("")
+
+>>> text_indentation("Hello")
+Hello
+
+
