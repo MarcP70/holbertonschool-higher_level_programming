@@ -19,9 +19,8 @@ Do you want a test?
 <BLANKLINE>
 That is a test
 
->>> text_indentation("")
-
->>> text_indentation("Hello")
-Hello
+>>> text_indentation("Hello world.")
+Hello world.
+<BLANKLINE>
 
 
