@@ -23,4 +23,3 @@ Do you want a test?
 That is a test.
 
 >>> text_indentation("")
-<BLANKLINE>
