@@ -4,6 +4,11 @@
 Hello.
 <BLANKLINE>
 
+>>> text_indentation("")
+
+>>> text_indentation("l")
+l
+
 >>> text_indentation(12345)
 Traceback (most recent call last):
 TypeError: text must be a string
