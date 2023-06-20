@@ -23,3 +23,11 @@ TypeError: 'NoneType' object is not iterable
 >>> my_list.append(1)
 >>> my_list.print_sorted()
 [1]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append('t')
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'str' and 'int'
