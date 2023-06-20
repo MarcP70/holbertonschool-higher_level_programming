@@ -32,10 +32,11 @@ class BaseGeometry:
             TypeError: If the value is not an integer.
             ValueError: If the value is less than or equal to 0.
         """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+        if value is not None:
+            if type(value) is not int:
+                raise TypeError("{} must be an integer".format(name))
+            if value <= 0:
+                raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
