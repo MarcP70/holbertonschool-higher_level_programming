@@ -1,40 +1,36 @@
 #!/usr/bin/python3
-"""This module has a class.
+"""
+Module: geometry
 
-Raises:
-    Exception: area() is not implemented.
-    TypeError: <name> must be an integer.
-    ValueError: <name> must be greater than 0.
+This module provides classes for basic geometric shapes such as rectangles
+    and squares.
 """
 
 
 class BaseGeometry:
-    """This class two methodes.
-
-    Raises:
-        Exception: area() is not implemented.
-        TypeError: <name> must be an integer.
-        ValueError: <name> must be greater than 0.
+    """
+    Base class for geometric shapes.
     """
 
     def area(self):
-        """Public instance method.
-
-        Raises:
-            Exception: area() is not implemented.
+        """
+        Calculate the area of the geometric shape.
+        This method raises an Exception since it is not implemented in
+            the base class.
         """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Public instance method.
+        """
+        Validate that the value is an integer greater than 0.
 
         Args:
-            name (string): The name.
-            value (int): The value.
+            name (str): The name of the value.
+            value (int): The value to be validated.
 
         Raises:
-            TypeError: <name> must be an integer.
-            ValueError: <name> must be greater than 0.
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))

@@ -21,3 +21,11 @@ SyntaxError: invalid syntax
 >>> BaseGeometry().integer_validator()
 Traceback (most recent call last):
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> BaseGeometry().integer_validator(None)
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> BaseGeometry().integer_validator(None, None)
+Traceback (most recent call last):
+TypeError: None must be an integer
