@@ -72,7 +72,7 @@ class Rectangle(BaseGeometry):
         Returns:
             str: The string representation of the rectangle.
         """
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        return f"[{self.__class__.__name__}] {self.__width}/{self.__height}"
 
 
 class Square(Rectangle):
@@ -89,12 +89,4 @@ class Square(Rectangle):
         """
         self.integer_validator("size", size)
         super().__init__(size, size)
-
-    def __str__(self):
-        """
-        Get a string representation of the square.
-
-        Returns:
-            str: The string representation of the square.
-        """
-        return f"[Square] {self._Rectangle__width}/{self._Rectangle__height}"
+        self.__size = size
