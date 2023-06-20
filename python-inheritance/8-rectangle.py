@@ -1,66 +1,57 @@
 #!/usr/bin/python3
-"""This module has a class.
+"""
+Module: geometry
 
-Raises:
-    Exception: area() is not implemented.
-    TypeError: <name> must be an integer.
-    ValueError: <name> must be greater than 0.
+This module provides classes for basic geometric shapes such as rectangles
+    and squares.
 """
 
 
 class BaseGeometry:
-    """This class define bases of geometry.
-
-    Raises:
-        Exception: area() is not implemented.
-        TypeError: <name> must be an integer.
-        ValueError: <name> must be greater than 0.
+    """
+    Base class for geometric shapes.
     """
 
-    pass
-
     def area(self):
-        """Public instance method.
-
-        Raises:
-            Exception: area() is not implemented.
         """
-
-        raise Exception("area() is not implemented")
+        Calculate the area of the geometric shape.
+        This method raises an Exception since it is not implemented in
+            the base class.
+        """
+        raise Exception("area() is not implemented.")
 
     def integer_validator(self, name, value):
-        """Public instance method.
+        """
+        Validate that the value is an integer greater than 0.
 
         Args:
-            name (string): The name.
-            value (int): The value.
+            name (str): The name of the value.
+            value (int): The value to be validated.
 
         Raises:
-            TypeError: <name> must be an integer.
-            ValueError: <name> must be greater than 0.
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
         """
-
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer.")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0.")
 
 
 class Rectangle(BaseGeometry):
-    """This class define a rectangle.
-
-    Args:
-        BaseGeometry (class): define bases of geometry.
+    """
+    Represents a rectangle shape.
     """
 
     def __init__(self, width, height):
-        """This methode initialize the instance of object rectangle.
+        """
+        Initialize a rectangle with the given width and height.
 
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
         """
-        BaseGeometry.integer_validator(self, "width", width)
-        BaseGeometry.integer_validator(self, "height", height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
