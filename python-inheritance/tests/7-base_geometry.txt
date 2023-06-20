@@ -41,3 +41,9 @@ TypeError: test must be an integer
 >>> BaseGeometry().integer_validator("test", float('nan'))
 Traceback (most recent call last):
 TypeError: test must be an integer
+
+>>> BaseGeometry().integer_validator("test", float(4))
+Traceback (most recent call last):
+TypeError: test must be an integer
+
+>>> BaseGeometry().integer_validator(4, 4)
