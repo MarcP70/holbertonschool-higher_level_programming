@@ -53,7 +53,6 @@ class Base:
             None
         """
         filename = cls.__name__ + ".json"
-        print(filename)
         json_list = []
         if list_objs is not None:
             json_list = [obj.to_dictionary() for obj in list_objs]
