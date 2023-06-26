@@ -181,7 +181,7 @@ class Rectangle(Base):
         return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} \
 - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Assigns arguments to each attribute of the Rectangle instance.
 
@@ -192,8 +192,13 @@ class Rectangle(Base):
                 - 3rd argument: height attribute
                 - 4th argument: x attribute
                 - 5th argument: y attribute
+            **kwargs: Variable number of keyword arguments: Key/value
 
         """
-        attributes = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            setattr(self, attributes[i], arg)
+        if args and len(args) > 0:
+            attributes = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
