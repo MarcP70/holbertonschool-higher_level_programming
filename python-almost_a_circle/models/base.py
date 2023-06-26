@@ -58,3 +58,23 @@ class Base:
             json_list = [obj.to_dictionary() for obj in list_objs]
         with open(filename, 'w', encoding="utf-8") as file:
             file.write(cls.to_json_string(json_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of dictionaries represented by the JSON string.
+
+        Args:
+            json_string (str): A string representing a list of dictionaries
+                in JSON format.
+
+        Returns:
+            list: The list of dictionaries represented by the JSON string.
+                If the JSON string is None or empty,
+                    an empty list is returned.
+
+        """
+        json_list = []
+        if json_string is None or len(json_string) == 0:
+            return json_list
+        return json.loads(json_string)
