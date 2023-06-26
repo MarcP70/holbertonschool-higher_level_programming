@@ -175,4 +175,5 @@ class Rectangle(Base):
             str: The string representation of the Rectangle instance.
 
         """
-        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} \
+- {self.width}/{self.height}"
