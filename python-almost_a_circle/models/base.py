@@ -102,3 +102,23 @@ class Base:
         # Apply the real attribute values using update method
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances loaded from a file.
+
+        Returns:
+            list: List of instances loaded from the file.
+                If the file doesn't exist, returns an empty list.
+
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_data = file.read()
+                dict_list = cls.from_json_string(json_data)
+                instances = [cls.create(**dictionary) for dictionary in dict_list]
+                return instances
+        except FileNotFoundError:
+            return []
