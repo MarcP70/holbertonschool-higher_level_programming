@@ -1,1 +1,2 @@
 *.json
+/tests/test_models/*
