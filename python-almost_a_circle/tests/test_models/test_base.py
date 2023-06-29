@@ -22,6 +22,22 @@ class TestBase(unittest.TestCase):
         b1 = Base()
         self.assertEqual(b1.id, 1)
 
+    def test_init_id_none(self):
+        b1 = Base(None)
+        self.assertEqual(b1.id, 1)
+
+    def test_init_with_id_string(self):
+        b1 = Base("test")
+        self.assertEqual(b1.id, "test")
+
+    def test_init_with_id_negative(self):
+        b1 = Base(-3)
+        self.assertEqual(b1.id, -3)
+
+    def test_init_with_id_float(self):
+        b1 = Base(4.3)
+        self.assertEqual(b1.id, 4.3)
+
     def test_to_json_string_empty(self):
         json_str = Base.to_json_string([])
         self.assertEqual(json_str, "[]")
