@@ -33,7 +33,8 @@ def filter_states_by_name_starting_with_N(mysql_username, mysql_password,
 
     # Execute the SQL query to retrieve all rows from the 'states' table
     # where the name starts with 'N'
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cursor.execute(
+        "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id")
 
     # Fetch all the rows returned by the query
     results = cursor.fetchall()
@@ -51,7 +52,7 @@ if __name__ == "__main__":
     # The script expects three command-line arguments: MySQL username,
     # password, and database name
     mysql_username, mysql_password, database_name = sys.argv[1],\
-          sys.argv[2], sys.argv[3]
+        sys.argv[2], sys.argv[3]
 
     # Call the filter_states_by_name_starting_with_N function with
     # the provided arguments
