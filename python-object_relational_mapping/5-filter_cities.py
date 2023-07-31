@@ -45,7 +45,10 @@ def filter_cities_by_state(mysql_username, mysql_password,
     result = cursor.fetchone()[0]
 
     # Print the result (cities) for the given state
-    print(result)
+    if result is not None:
+        print(result)
+    else:
+        print()
 
     # Close the cursor and the database connection
     cursor.close()
