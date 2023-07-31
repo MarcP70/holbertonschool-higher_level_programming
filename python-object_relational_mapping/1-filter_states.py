@@ -7,10 +7,11 @@ import MySQLdb
 import sys
 
 
-def get_all_states(mysql_username, mysql_password, database_name):
+def filter_states_by_name_starting_with_N(mysql_username, mysql_password,
+                                          database_name):
     """
-    Lists all states with names starting with 'N' from the given
-        MySQL database.
+    Retrieves and prints all states with names starting with 'N' from the
+    'states' table in the given MySQL database.
 
     Parameters:
         mysql_username (str): The MySQL database username.
@@ -31,6 +32,7 @@ def get_all_states(mysql_username, mysql_password, database_name):
     cursor = db.cursor()
 
     # Execute the SQL query to retrieve all rows from the 'states' table
+    # where the name starts with 'N'
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 
     # Fetch all the rows returned by the query
@@ -49,7 +51,9 @@ if __name__ == "__main__":
     # The script expects three command-line arguments: MySQL username,
     # password, and database name
     mysql_username, mysql_password, database_name = sys.argv[1],\
-        sys.argv[2], sys.argv[3]
+          sys.argv[2], sys.argv[3]
 
-    # Call the get_all_states function with the provided arguments
-    get_all_states(mysql_username, mysql_password, database_name)
+    # Call the filter_states_by_name_starting_with_N function with
+    # the provided arguments
+    filter_states_by_name_starting_with_N(
+        mysql_username, mysql_password, database_name)
