@@ -35,7 +35,7 @@ def filter_states_by_name(mysql_username, mysql_password, database_name,
 
     # Prepare the SQL query with user input using the format method
     # to prevent SQL injection
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id"
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (state_name_searched,))
 
     # Fetch all the rows returned by the query
