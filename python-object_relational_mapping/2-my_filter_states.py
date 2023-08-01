@@ -35,7 +35,7 @@ def filter_states_by_name(mysql_username, mysql_password, database_name,
 
     # Prepare the SQL query with user input using the format method
     cursor.execute(
-        "SELECT * FROM states WHERE name like '{}'\
+        "SELECT * FROM states WHERE name = '{}'\
               ORDER BY id ASC".format(state_name_searched))
 
     # Fetch all the rows returned by the query
